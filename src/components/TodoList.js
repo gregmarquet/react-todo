@@ -9,11 +9,16 @@ class TodoList extends Component {
     };
   }
 
+  handleTodoTextChange(event) {
+    // debugger
+    this.setState({todoText: event.target.value})
+  }
+
   render() {
 
     return (
       <div>
-        <TodoForm />
+        <TodoForm handleTodoTextChange={this.handleTodoTextChange.bind(this)} todoText={this.state.todoText} />
         <TodoListItems />
       </div>
     )
